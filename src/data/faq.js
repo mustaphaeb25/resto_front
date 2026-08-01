@@ -1,0 +1,8 @@
+export const faq = [
+  { id: 1, question: 'What is the check-in and check-out time?', answer: 'Check-in is available from 2:00 PM and check-out is until 12:00 PM (noon). Early check-in and late check-out can be arranged upon request, subject to availability.' },
+  { id: 2, question: 'Do you offer airport transfers?', answer: 'Yes, we offer complimentary airport transfers for guests staying in our Executive Suites and Royal Villas. For other room categories, transfers can be arranged at an additional cost. Please contact us in advance to schedule.' },
+  { id: 3, question: 'Is breakfast included in the room rate?', answer: 'Yes, a complimentary breakfast is included for all in-house guests. Enjoy a curated spread of both Continental and traditional Rajasthani breakfast items at our restaurant.' },
+  { id: 4, question: 'Can I modify or cancel my reservation?', answer: 'Reservations can be modified or cancelled free of charge up to 48 hours before your scheduled arrival. For cancellations within 48 hours, a one-night charge may apply. Please contact us directly for any changes.' },
+  { id: 5, question: 'Do you accommodate dietary restrictions?', answer: 'Absolutely. Our kitchen is experienced in preparing vegetarian, vegan, gluten-free, and allergen-conscious meals. Please inform us of any dietary requirements when making your reservation or upon arrival.' },
+  { id: 6, question: 'Is Wi-Fi available throughout the property?', answer: 'Yes, complimentary high-speed Wi-Fi is available throughout the property, including all rooms, suites, villas, restaurant, spa, and common areas.' },
+]

@@ -1,0 +1,18 @@
+export const galleryItems = [
+  { id: 1, category: 'rooms', label: 'Heritage Deluxe Room', image: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=600&q=80' },
+  { id: 2, category: 'dining', label: 'Signature Dishes', image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80' },
+  { id: 3, category: 'rooms', label: 'Executive Suite', image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80' },
+  { id: 4, category: 'wellness', label: 'Spa & Wellness', image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=600&q=80' },
+  { id: 5, category: 'dining', label: 'Restaurant Ambiance', image: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=600&q=80' },
+  { id: 6, category: 'events', label: 'Private Events', image: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=600&q=80' },
+  { id: 7, category: 'rooms', label: 'Saffron Royal Villa', image: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=600&q=80' },
+  { id: 8, category: 'dining', label: 'Wine & Spirits', image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=600&q=80' },
+  { id: 9, category: 'wellness', label: 'Infinity Pool', image: '/pool.jpeg' },
+  { id: 10, category: 'events', label: 'Rooftop Celebrations', image: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=600&q=80' },
+  { id: 11, category: 'dining', label: 'Saffron Butter Lobster', image: '/lobster.jpeg' },
+  { id: 12, category: 'rooms', label: 'Saffron House Exterior', image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80' },
+  { id: 13, category: 'wellness', label: 'Morning Yoga', image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80' },
+  { id: 14, category: 'dining', label: 'Chocolate Fondant', image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=600&q=80' },
+  { id: 15, category: 'events', label: 'Festive Celebrations', image: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=600&q=80' },
+  { id: 16, category: 'dining', label: 'Private Dining', image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80' },
+]
