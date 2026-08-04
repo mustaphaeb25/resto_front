@@ -30,6 +30,7 @@ async function request(endpoint, options = {}) {
   return res.json()
 }
 
+
 export const api = {
   // Auth
   login: (data) => request('/auth/login', { method: 'POST', body: data }),
