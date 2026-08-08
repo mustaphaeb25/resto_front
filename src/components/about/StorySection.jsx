@@ -7,7 +7,7 @@ export default function StorySection() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <FadeIn direction="left">
           <SubHeading>SINCE 1998</SubHeading>
-          <h3 className="font-serif text-[2rem] mb-6">A Legacy of Timeless Hospitality</h3>
+          <h3 className="font-serif text-[1.7rem] sm:text-[2rem] mb-6">A Legacy of Timeless Hospitality</h3>
           <p className="text-[0.9rem] text-text-muted leading-[1.8] mb-4">
             Nestled in the heart of Udaipur, Saffron House began as a restored 18th-century haveli
             where the Sharma family welcomed weary travellers with warm chai and heartfelt stories.
@@ -27,7 +27,7 @@ export default function StorySection() {
         </FadeIn>
 
         <FadeIn direction="right">
-          <div className="rounded-2xl overflow-hidden h-[400px]">
+          <div className="rounded-2xl overflow-hidden h-[280px] sm:h-[400px]">
             <img
               src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80"
               alt="Saffron House Heritage"

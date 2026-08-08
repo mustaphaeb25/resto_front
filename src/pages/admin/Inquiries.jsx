@@ -10,7 +10,7 @@ export default function AdminInquiries() {
 
   const load = () => {
     setLoading(true)
-    api.getInquiries().then(setData).catch(() => {}).finally(() => setLoading(false))
+    api.getInquiries().then((res) => setData(Array.isArray(res) ? res : res.data || [])).catch(() => {}).finally(() => setLoading(false))
   }
 
   useEffect(() => { load() }, [])

@@ -52,7 +52,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-dark-green text-white pt-[60px] pb-5 mt-[60px]">
-      <div className="max-w-[1200px] mx-auto px-6">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1.5fr_1.5fr] gap-8 mb-10">
           <div className="footer-brand">
             <Link to="/" className="flex items-center gap-3">
@@ -64,8 +64,12 @@ export default function Footer() {
             </Link>
             <p className="text-[0.75rem] text-[#A0B0A8] my-4 leading-relaxed">A luxury boutique retreat where every detail is crafted for your comfort.</p>
             <div className="flex gap-2.5">
-              {[FaInstagram, FaFacebookF, FaTripadvisor].map((Icon, i) => (
-                <a key={i} href="#" className="w-7 h-7 rounded-full border border-white/20 flex items-center justify-center text-[0.75rem] text-white transition-all hover:bg-gold hover:border-gold">
+              {[
+                { Icon: FaInstagram, href: 'https://www.instagram.com/imran45075?igsh=dnBnZ3lxaTcwbnU2' },
+                { Icon: FaFacebookF, href: 'https://www.facebook.com/profile.php?id=61581190896851' },
+                { Icon: FaTripadvisor, href: 'https://www.facebook.com/profile.php?id=61581190896851' },
+              ].map(({ Icon, href }, i) => (
+                <a key={i} href={href} target="_blank" rel="noreferrer" className="w-7 h-7 rounded-full border border-white/20 flex items-center justify-center text-[0.75rem] text-white transition-all hover:bg-gold hover:border-gold">
                   <Icon />
                 </a>
               ))}
@@ -102,7 +106,15 @@ export default function Footer() {
             <h5 className="uppercase text-[0.75rem] tracking-[1px] mb-4 text-gold">FOLLOW US</h5>
             <div className="grid grid-cols-3 gap-1.5">
               {instaImages.map((src, i) => (
-                <img key={i} src={src} alt={`Insta ${i + 1}`} className="w-full h-[50px] rounded transition-transform hover:scale-105 cursor-pointer" loading="lazy" />
+                <a
+                  key={i}
+                  href="https://www.instagram.com/imran45075?igsh=dnBnZ3lxaTcwbnU2"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`Follow us on Instagram ${i + 1}`}
+                >
+                  <img src={src} alt={`Insta ${i + 1}`} className="w-full h-[50px] rounded transition-transform hover:scale-105 cursor-pointer" loading="lazy" />
+                </a>
               ))}
             </div>
           </div>
@@ -116,7 +128,7 @@ export default function Footer() {
                 placeholder="Your email address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="border-none outline-none p-2 text-[0.75rem] w-full"
+                className="border-none outline-none p-2 text-[0.75rem] w-full text-text-dark placeholder:text-text-muted"
                 required
               />
               <button type="submit" disabled={submitting} className="bg-gold text-white border-none rounded px-3 cursor-pointer transition-colors hover:bg-gold-hover disabled:opacity-50">

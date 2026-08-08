@@ -18,7 +18,7 @@ export default function AdminDiningReservations() {
   const fetchData = () => {
     setLoading(true)
     api.getAdminDiningReservations()
-      .then(setData)
+      .then((res) => setData(Array.isArray(res) ? res : res.data || []))
       .catch(() => {})
       .finally(() => setLoading(false))
   }

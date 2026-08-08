@@ -40,8 +40,7 @@ export default function SearchBar({ onSearch, category }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-white rounded-2xl p-5 px-7 shadow border border-border mb-12 grid gap-4 items-end"
-      style={{ gridTemplateColumns: '1fr 1fr 1fr 1fr auto' }}
+      className="bg-white rounded-2xl p-5 sm:px-7 shadow border border-border mb-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_1fr_auto] gap-4 items-end"
     >
       <div>
         <label className={labelBase}>Check-In</label>
@@ -85,7 +84,7 @@ export default function SearchBar({ onSearch, category }) {
         </select>
       </div>
 
-      <Button type="submit">CHECK AVAILABILITY</Button>
+      <Button type="submit" className="w-full sm:col-span-2 lg:col-span-1">CHECK AVAILABILITY</Button>
     </form>
   )
 }

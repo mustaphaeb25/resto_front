@@ -18,7 +18,7 @@ export default function AdminRoomReservations() {
   const fetchData = () => {
     setLoading(true)
     api.getAdminRoomReservations()
-      .then(setData)
+      .then((res) => setData(Array.isArray(res) ? res : res.data || []))
       .catch(() => {})
       .finally(() => setLoading(false))
   }

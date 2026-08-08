@@ -73,7 +73,7 @@ export default function AdminGallery() {
 
   return (
     <div>
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
         <div>
           <h1 className="text-2xl font-serif text-dark-green">Gallery</h1>
           <p className="text-sm text-text-muted mt-1">Manage gallery images</p>

@@ -8,7 +8,7 @@ export default function TeamGrid() {
       <div>
         <div className="text-center mb-9">
           <SubHeading>MEET THE TEAM</SubHeading>
-          <h3 className="font-serif text-[2rem]">The Hearts Behind Saffron House</h3>
+          <h3 className="font-serif text-[1.7rem] sm:text-[2rem]">The Hearts Behind Saffron House</h3>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 mb-16">

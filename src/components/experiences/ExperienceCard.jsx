@@ -73,7 +73,7 @@ export default function ExperienceCard({ experience }) {
             <ReviewWidget target="EXPERIENCE" itemId={experience.id} itemName={experience.name} size="text-[0.8rem]" />
           </div>
 
-          <div className="flex gap-4 text-[0.75rem] text-text-muted mb-3">
+          <div className="flex flex-wrap gap-x-4 gap-y-1 text-[0.75rem] text-text-muted mb-3">
             <span className="flex items-center gap-1">
               <FaClock className="text-gold" /> {experience.duration}
             </span>
@@ -86,7 +86,7 @@ export default function ExperienceCard({ experience }) {
             {experience.description}
           </p>
 
-          <div className="flex items-end justify-between pt-4 border-t border-border">
+          <div className="flex flex-wrap items-end justify-between gap-3 pt-4 border-t border-border">
             <div>
               <span className="text-[1.25rem] font-bold text-dark-green">${experience.price}</span>
               <span className="text-[0.75rem] text-light font-normal"> / {experience.unit}</span>
@@ -98,12 +98,12 @@ export default function ExperienceCard({ experience }) {
 
       {modalOpen && (
         <div
-          className="fixed inset-0 z-[2000] flex items-center justify-center p-4"
+          className="fixed inset-0 z-[2000] flex items-end sm:items-center justify-center p-0 sm:p-4"
           style={{ backgroundColor: 'rgba(0,0,0,0.6)' }}
           onClick={() => setModalOpen(false)}
         >
           <div
-            className="bg-white rounded-2xl w-full max-w-[520px] max-h-[90vh] overflow-y-auto shadow-2xl"
+            className="bg-white rounded-t-2xl sm:rounded-2xl w-full sm:max-w-[520px] max-h-[92dvh] sm:max-h-[90vh] overflow-y-auto shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between p-6 pb-0">
@@ -139,7 +139,7 @@ export default function ExperienceCard({ experience }) {
                   <input type="text" name="name" value={form.name} onChange={handleChange} required className={inputBase} placeholder="John Doe" />
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className={labelBase}>Email</label>
                     <input type="email" name="email" value={form.email} onChange={handleChange} required className={inputBase} placeholder="john@example.com" />
@@ -150,7 +150,7 @@ export default function ExperienceCard({ experience }) {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className={labelBase}>Date</label>
                     <input type="date" name="date" value={form.date} onChange={handleChange} required className={inputBase} />

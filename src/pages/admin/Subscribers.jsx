@@ -8,7 +8,7 @@ export default function AdminSubscribers() {
 
   useEffect(() => {
     api.getSubscribers()
-      .then(setData)
+      .then((res) => setData(Array.isArray(res) ? res : res.data || []))
       .catch(() => {})
       .finally(() => setLoading(false))
   }, [])

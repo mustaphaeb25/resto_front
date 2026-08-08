@@ -66,6 +66,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: clip;
   }
   body {
     font-family: var(--font-sans);
@@ -73,5 +74,25 @@
     color: var(--color-text-dark);
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    min-width: 0;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    -webkit-tap-highlight-color: transparent;
+  }
+  @media (pointer: coarse) {
+    button,
+    a,
+    select {
+      touch-action: manipulation;
+    }
   }
 }

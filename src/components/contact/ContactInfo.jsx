@@ -28,7 +28,7 @@ const socialLinks = [
 
 export default function ContactInfo() {
   return (
-    <div className="bg-dark-green text-white rounded-2xl p-9 h-full">
+    <div className="bg-dark-green text-white rounded-2xl p-6 sm:p-9 h-full">
       <h3 className="font-serif text-[1.6rem] mb-6">Contact Information</h3>
 
       {infoItems.map((item, index) => (

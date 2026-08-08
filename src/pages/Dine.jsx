@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import PageBanner from '../components/layout/PageBanner'
 import MenuItemCard from '../components/dine/MenuItemCard'
 import ReservationSection from '../components/dine/ReservationSection'
@@ -18,6 +19,16 @@ export default function Dine() {
   const [menuItems, setMenuItems] = useState([])
   const [loading, setLoading] = useState(true)
   const [activeTab, setActiveTab] = useState('all')
+  const location = useLocation()
+
+  useEffect(() => {
+    if (location.hash) {
+      const el = document.querySelector(location.hash)
+      if (el) {
+        setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 100)
+      }
+    }
+  }, [location.hash])
 
   useEffect(() => {
     api.getMenuItems()

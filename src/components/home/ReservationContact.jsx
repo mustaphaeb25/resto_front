@@ -8,7 +8,10 @@ import FadeIn from '../ui/FadeIn'
 import SubHeading from '../ui/SubHeading'
 import Button from '../ui/Button'
 
-const initialForm = { name: '', date: '', time: '', guests: '' }
+const initialForm = { name: '', phone: '', date: '', time: '', guests: '' }
+
+const today = new Date()
+const todayStr = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`
 
 export default function ReservationContact() {
   const showToast = useToast()
@@ -23,7 +26,7 @@ export default function ReservationContact() {
     try {
       await api.createDiningReservation({
         name: form.name,
-        phone: '',
+        phone: form.phone,
         date: form.date,
         time: form.time,
         guests: parseInt(form.guests, 10) || 2,
@@ -48,12 +51,12 @@ export default function ReservationContact() {
   ]
 
   return (
-    <FadeIn className="bg-card rounded-2xl p-8 grid grid-cols-1 md:grid-cols-2 gap-10">
+    <FadeIn className="bg-card rounded-2xl p-6 sm:p-8 grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10">
       <div>
         <SubHeading>RESERVATION</SubHeading>
-        <h4 className="font-serif text-[1.4rem] mb-5">Book Your Table</h4>
+        <h4 className="font-serif text-[1.3rem] sm:text-[1.4rem] mb-5">Book Your Table</h4>
         <form onSubmit={handleSubmit}>
-          <div className="grid grid-cols-3 gap-2.5 mb-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-4">
             <div className="relative">
               <input
                 type="text"
@@ -68,8 +71,21 @@ export default function ReservationContact() {
             </div>
             <div className="relative">
               <input
+                type="tel"
+                name="phone"
+                placeholder="Your Phone"
+                value={form.phone}
+                onChange={handleChange}
+                required
+                className={inputBase}
+              />
+              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-text-light text-xs"><FaPhone /></span>
+            </div>
+            <div className="relative">
+              <input
                 type="date"
                 name="date"
+                min={todayStr}
                 value={form.date}
                 onChange={handleChange}
                 required
@@ -78,7 +94,15 @@ export default function ReservationContact() {
               <span className="absolute left-3 top-1/2 -translate-y-1/2 text-text-light text-xs"><FaCalendar /></span>
             </div>
             <div className="relative">
-              <select name="time" value={form.time} onChange={handleChange} required className={inputBase}>
+              <select
+                name="time"
+                value={form.time}
+                onChange={handleChange}
+                required
+                onInvalid={(e) => e.target.setCustomValidity('Please select a time')}
+                onInput={(e) => e.target.setCustomValidity('')}
+                className={inputBase}
+              >
                 <option value="">Time</option>
                 <option>7:00 AM</option>
                 <option>8:00 AM</option>
@@ -93,9 +117,17 @@ export default function ReservationContact() {
               <span className="absolute left-3 top-1/2 -translate-y-1/2 text-text-light text-xs"><FaClock /></span>
             </div>
           </div>
-          <div className="flex gap-2.5">
+          <div className="flex flex-col sm:flex-row gap-2.5">
             <div className="relative flex-1">
-              <select name="guests" value={form.guests} onChange={handleChange} required className={inputBase}>
+              <select
+                name="guests"
+                value={form.guests}
+                onChange={handleChange}
+                required
+                onInvalid={(e) => e.target.setCustomValidity('Please select number of guests')}
+                onInput={(e) => e.target.setCustomValidity('')}
+                className={inputBase}
+              >
                 <option value="">Number of Guests</option>
                 <option>1 Guest</option>
                 <option>2 Guests</option>
@@ -105,7 +137,7 @@ export default function ReservationContact() {
               </select>
               <span className="absolute left-3 top-1/2 -translate-y-1/2 text-text-light text-xs"><FaUsers /></span>
             </div>
-            <Button type="submit" variant="primary" disabled={submitting} className="flex-1">
+            <Button type="submit" variant="primary" disabled={submitting} className="flex-1 w-full sm:w-auto">
               {submitting ? 'SUBMITTING...' : 'RESERVE NOW'} {!submitting && <FaConciergeBell />}
             </Button>
           </div>

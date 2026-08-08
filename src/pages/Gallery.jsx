@@ -65,8 +65,8 @@ export default function Gallery() {
                       alt={item.label}
                       className="w-full block hover:scale-105 transition-transform duration-300"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                      <span className="text-white text-[0.85rem] font-semibold">{item.label}</span>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent sm:opacity-0 sm:hover:opacity-100 transition-opacity duration-300 flex items-end p-3 sm:p-4">
+                      <span className="text-white text-[0.8rem] sm:text-[0.85rem] font-semibold">{item.label}</span>
                     </div>
                   </div>
                 </FadeIn>

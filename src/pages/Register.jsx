@@ -34,8 +34,8 @@ export default function Register() {
         description="Create an account to manage your reservations and enjoy exclusive offers."
         image="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=80"
       />
-      <div className="max-w-[460px] mx-auto py-16 px-6">
-        <div className="bg-white rounded-2xl p-9 border border-border">
+      <div className="max-w-[460px] mx-auto py-10 sm:py-16 px-4 sm:px-6">
+        <div className="bg-white rounded-2xl p-6 sm:p-9 border border-border">
           <h3 className="font-serif text-[1.6rem] mb-2">Create Account</h3>
           <p className="text-[0.85rem] text-text-muted mb-6">
             Fill in the details below to create your account.
@@ -77,7 +77,8 @@ export default function Register() {
                 value={form.password}
                 onChange={(e) => setForm({ ...form, password: e.target.value })}
                 required
-                minLength={6}
+                minLength={10}
+                title="Password must be at least 10 characters and contain at least one letter and one number"
                 className="w-full p-2.5 pl-3.5 border border-border rounded-lg text-[0.85rem] bg-body focus:border-gold outline-none transition-colors"
               />
             </div>

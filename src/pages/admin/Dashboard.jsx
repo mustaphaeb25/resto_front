@@ -56,7 +56,7 @@ export default function Dashboard() {
           <h2 className="text-lg font-serif text-dark-green mb-4">Recent Experience Bookings</h2>
           <div className="bg-white rounded-xl border border-border overflow-hidden">
             {stats.recentExperienceBookings.slice(0, 5).map((bk) => (
-              <div key={bk.id} className="flex items-center justify-between px-5 py-3 border-b border-border last:border-b-0">
+              <div key={bk.id} className="flex flex-wrap items-center justify-between gap-2 px-5 py-3 border-b border-border last:border-b-0">
                 <div>
                   <p className="text-sm font-medium text-text-dark">{bk.name || bk.user?.name || 'Guest'}</p>
                   <p className="text-xs text-text-muted">{bk.experience?.name || bk.experience?.title || '—'} · {new Date(bk.date).toLocaleDateString()}</p>
@@ -77,7 +77,7 @@ export default function Dashboard() {
           <h2 className="text-lg font-serif text-dark-green mb-4">Recent Room Bookings</h2>
           <div className="bg-white rounded-xl border border-border overflow-hidden">
             {stats.recentRoomReservations.slice(0, 5).map((bk) => (
-              <div key={bk.id} className="flex items-center justify-between px-5 py-3 border-b border-border last:border-b-0">
+              <div key={bk.id} className="flex flex-wrap items-center justify-between gap-2 px-5 py-3 border-b border-border last:border-b-0">
                 <div>
                   <p className="text-sm font-medium text-text-dark">{bk.guestName || bk.user?.name || 'Guest'}</p>
                   <p className="text-xs text-text-muted">{bk.room?.title || '—'} · {new Date(bk.checkIn).toLocaleDateString()} - {new Date(bk.checkOut).toLocaleDateString()}</p>
@@ -98,7 +98,7 @@ export default function Dashboard() {
           <h2 className="text-lg font-serif text-dark-green mb-4">Recent Dining Bookings</h2>
           <div className="bg-white rounded-xl border border-border overflow-hidden">
             {stats.recentDiningReservations.slice(0, 5).map((bk) => (
-              <div key={bk.id} className="flex items-center justify-between px-5 py-3 border-b border-border last:border-b-0">
+              <div key={bk.id} className="flex flex-wrap items-center justify-between gap-2 px-5 py-3 border-b border-border last:border-b-0">
                 <div>
                   <p className="text-sm font-medium text-text-dark">{bk.name || 'Guest'}</p>
                   <p className="text-xs text-text-muted">{new Date(bk.date).toLocaleDateString()} at {bk.time} · {bk.guests} guests</p>
@@ -119,7 +119,7 @@ export default function Dashboard() {
           <h2 className="text-lg font-serif text-dark-green mb-4">Recent Inquiries</h2>
           <div className="bg-white rounded-xl border border-border overflow-hidden">
             {stats.recentInquiries.slice(0, 5).map((inq) => (
-              <div key={inq.id} className="flex items-center justify-between px-5 py-3 border-b border-border last:border-b-0">
+              <div key={inq.id} className="flex flex-wrap items-center justify-between gap-2 px-5 py-3 border-b border-border last:border-b-0">
                 <div>
                   <p className="text-sm font-medium text-text-dark">{inq.name}</p>
                   <p className="text-xs text-text-muted">{inq.email} · {inq.subject}</p>

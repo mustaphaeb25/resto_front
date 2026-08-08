@@ -20,12 +20,12 @@ export default function GalleryPreview() {
       <FadeIn>
         <SubHeading>GALLERY</SubHeading>
       </FadeIn>
-      <div className="grid grid-cols-5 gap-3 mt-3">
+      <div className="grid grid-cols-3 sm:grid-cols-5 gap-2 sm:gap-3 mt-3">
         {previewItems.map((item, i) => (
           <FadeIn key={item.id} delay={i * 60}>
             <Link
               to="/gallery"
-              className="block h-[120px] rounded-xl overflow-hidden"
+              className="block h-[90px] sm:h-[120px] rounded-xl overflow-hidden"
             >
               <img
                 src={item.image}

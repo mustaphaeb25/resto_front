@@ -7,7 +7,7 @@ const variants = {
 }
 
 export default function Button({ children, variant = 'primary', to, href, className = '', disabled, ...props }) {
-  const base = 'inline-flex items-center justify-center gap-2 rounded-sm px-6 py-3 text-[0.85rem] font-semibold transition-all duration-300 border border-transparent'
+  const base = 'inline-flex items-center justify-center gap-2 rounded-sm px-6 py-3 min-h-11 text-[0.85rem] font-semibold transition-all duration-300 border border-transparent'
   const stateClasses = disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
   const classes = `${base} ${stateClasses} ${variants[variant]} ${className}`
 

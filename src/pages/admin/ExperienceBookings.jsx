@@ -18,7 +18,7 @@ export default function AdminExperienceBookings() {
   const fetchData = () => {
     setLoading(true)
     api.getAdminExperienceBookings()
-      .then(setData)
+      .then((res) => setData(Array.isArray(res) ? res : res.data || []))
       .catch(() => {})
       .finally(() => setLoading(false))
   }

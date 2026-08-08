@@ -19,7 +19,7 @@ export function ToastProvider({ children }) {
     <ToastContext.Provider value={showToast}>
       {children}
       <div
-        className={`fixed bottom-6 right-6 z-[2000] flex items-center gap-3 rounded-lg bg-dark-green px-5 py-3.5 text-sm text-white shadow-lg transition-all duration-300 ${
+        className={`fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:max-w-sm z-[2000] flex items-center gap-3 rounded-lg bg-dark-green px-5 py-3.5 text-sm text-white shadow-lg transition-all duration-300 ${
           toast.visible ? 'translate-y-0 opacity-100' : 'translate-y-[100px] opacity-0'
         }`}
       >

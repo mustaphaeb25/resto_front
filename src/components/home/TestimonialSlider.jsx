@@ -17,7 +17,7 @@ export default function TestimonialSlider() {
   const t = testimonials[current]
 
   return (
-    <FadeIn direction="right" className="bg-card rounded-2xl p-9">
+    <FadeIn direction="right" className="bg-card rounded-2xl p-6 sm:p-9">
       <FaQuoteLeft className="text-gold/40 text-[3rem] mb-4" />
       <h4 className="font-serif text-[1.2rem] mb-4">What Our Guests Say</h4>
       <p className="font-serif text-[1.1rem] italic leading-[1.5] min-h-[80px] mb-6">

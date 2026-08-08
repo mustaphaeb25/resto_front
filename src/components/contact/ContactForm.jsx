@@ -40,7 +40,7 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="bg-white rounded-2xl p-9 border border-border">
+    <div className="bg-white rounded-2xl p-6 sm:p-9 border border-border">
       <h3 className="font-serif text-[1.6rem] mb-2">Send Us a Message</h3>
       <p className="text-[0.85rem] text-text-muted mb-6">
         Fill out the form below and our team will respond within 24 hours.
@@ -98,6 +98,8 @@ export default function ContactForm() {
               value={form.subject}
               onChange={handleChange}
               required
+              onInvalid={(e) => e.target.setCustomValidity('Please select a subject')}
+              onInput={(e) => e.target.setCustomValidity('')}
               className="w-full p-2.5 pl-3.5 border border-border rounded-lg text-[0.85rem] bg-body focus:border-gold outline-none transition-colors"
             >
               <option value="">Select a subject</option>

@@ -46,12 +46,12 @@ export default function RoomBookingModal({ room, isOpen, onClose }) {
 
   return (
     <div
-      className="fixed inset-0 z-[2000] flex items-center justify-center p-4"
+      className="fixed inset-0 z-[2000] flex items-end sm:items-center justify-center p-0 sm:p-4"
       style={{ backgroundColor: 'rgba(0,0,0,0.6)' }}
       onClick={onClose}
     >
       <div
-        className="bg-white rounded-2xl w-full max-w-[520px] max-h-[90vh] overflow-y-auto shadow-2xl"
+        className="bg-white rounded-t-2xl sm:rounded-2xl w-full sm:max-w-[520px] max-h-[92dvh] sm:max-h-[90vh] overflow-y-auto shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between p-6 pb-0">
@@ -87,10 +87,10 @@ export default function RoomBookingModal({ room, isOpen, onClose }) {
               <input type="text" name="guestName" value={form.guestName} onChange={handleChange} required className={inputBase} placeholder="John Doe" />
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className={labelBase}>Phone</label>
-                <input type="tel" name="guestPhone" value={form.guestPhone} onChange={handleChange} className={inputBase} placeholder="+91 98765 43210" />
+                <input type="tel" name="guestPhone" value={form.guestPhone} onChange={handleChange} className={inputBase} placeholder="+212 6 25 19 36 82" />
               </div>
               <div>
                 <label className={labelBase}>Email</label>
@@ -98,7 +98,7 @@ export default function RoomBookingModal({ room, isOpen, onClose }) {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className={labelBase}>Check-In</label>
                 <input type="date" name="checkIn" value={form.checkIn} onChange={handleChange} required className={inputBase} />

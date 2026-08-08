@@ -34,8 +34,8 @@ export default function Login() {
         description="Access your account to manage reservations and bookings."
         image="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=80"
       />
-      <div className="max-w-[460px] mx-auto py-16 px-6">
-        <div className="bg-white rounded-2xl p-9 border border-border">
+      <div className="max-w-[460px] mx-auto py-10 sm:py-16 px-4 sm:px-6">
+        <div className="bg-white rounded-2xl p-6 sm:p-9 border border-border">
           <h3 className="font-serif text-[1.6rem] mb-2">Sign In</h3>
           <p className="text-[0.85rem] text-text-muted mb-6">
             Enter your email and password to access your account.

@@ -17,9 +17,9 @@ export default function ChefSpecial() {
 
   return (
     <div className="bg-dark-green rounded-2xl overflow-hidden grid grid-cols-1 md:grid-cols-2 text-white h-full">
-      <div className="p-9 flex flex-col justify-center">
+      <div className="p-6 sm:p-9 flex flex-col justify-center">
         <SubHeading className="text-gold">CHEF&apos;S SPECIAL</SubHeading>
-        <h3 className="font-serif text-[1.8rem] mb-3">{seaBass.name}</h3>
+        <h3 className="font-serif text-[1.5rem] sm:text-[1.8rem] mb-3">{seaBass.name}</h3>
         <p className="text-[#C0C8C4] text-[0.85rem] mb-5 leading-relaxed">
           {seaBass.description}
         </p>
@@ -30,7 +30,7 @@ export default function ChefSpecial() {
           </Button>
         </div>
       </div>
-      <div className="h-full min-h-[300px]">
+      <div className="h-full min-h-[220px] sm:min-h-[300px]">
         <img src={seaBass.image} alt={seaBass.name} className="w-full h-full object-cover" />
       </div>
     </div>

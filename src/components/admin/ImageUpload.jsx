@@ -31,8 +31,8 @@ export default function ImageUpload({ value, onChange, label = 'Image' }) {
   return (
     <div>
       <label className="block text-sm font-medium text-text-dark mb-1">{label}</label>
-      <div className="flex items-start gap-3">
-        <div className="flex-1">
+      <div className="flex flex-col sm:flex-row items-start gap-3">
+        <div className="flex-1 w-full">
           <input
             type="text"
             value={value}

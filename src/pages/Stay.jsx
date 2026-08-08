@@ -76,12 +76,12 @@ export default function Stay() {
 
         <RoomBookingModal room={bookingRoom} isOpen={!!bookingRoom} onClose={() => setBookingRoom(null)} />
 
-        <div className="bg-card rounded-2xl p-12 mb-16">
+        <div className="bg-card rounded-2xl p-6 sm:p-12 mb-16">
           <div className="text-center">
             <SubHeading>GUEST PRIVILEGES</SubHeading>
             <h3 className="font-serif text-2xl">Boutique Hotel Amenities</h3>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-8">
             {amenities.map((a) => {
               const Icon = iconMap[a.icon]
               return (

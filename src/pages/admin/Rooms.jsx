@@ -91,7 +91,7 @@ export default function AdminRooms() {
 
   return (
     <div>
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
         <div>
           <h1 className="text-2xl font-serif text-dark-green">Rooms</h1>
           <p className="text-sm text-text-muted mt-1">Manage your room listings</p>
@@ -107,7 +107,7 @@ export default function AdminRooms() {
       </div>
 
       <FormModal isOpen={modalOpen} onClose={() => setModalOpen(false)} onSave={handleSave} title={editItem ? 'Edit Room' : 'Add Room'} loading={saving}>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium text-text-dark mb-1">Name</label>
             <input type="text" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} required className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gold/30 focus:border-gold" />

@@ -21,6 +21,9 @@ export default function ReservationSection() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
+  const today = new Date()
+  const todayStr = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     setSubmitting(true)
@@ -46,10 +49,10 @@ export default function ReservationSection() {
   const labelBase = 'block text-[0.75rem] text-gold uppercase mb-1'
 
   return (
-    <div className="bg-dark-green text-white rounded-2xl p-12 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-16">
+    <div id="table-reservation" className="bg-dark-green text-white rounded-2xl p-6 sm:p-12 grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 items-center mb-16 scroll-mt-28">
       <div>
         <SubHeading className="!text-gold">TABLE RESERVATION</SubHeading>
-        <h3 className="font-serif text-[2.2rem] mb-4">Experience World-Class Dining</h3>
+        <h3 className="font-serif text-[1.8rem] sm:text-[2.2rem] mb-4">Experience World-Class Dining</h3>
         <p className="text-[0.9rem] mb-6" style={{ color: '#C0C8C4' }}>
           Secure your preferred table at Saffron and enjoy an evening of culinary artistry, 
           live music, and breathtaking views.
@@ -65,7 +68,7 @@ export default function ReservationSection() {
       </div>
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className={labelBase}>Full Name</label>
             <input
@@ -85,19 +88,20 @@ export default function ReservationSection() {
               name="phone"
               value={form.phone}
               onChange={handleChange}
-              placeholder="+91 98765 43210"
+              placeholder="+212 6 25 19 36 82"
               required
               className={inputBase}
             />
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className={labelBase}>Date</label>
             <input
               type="date"
               name="date"
+              min={todayStr}
               value={form.date}
               onChange={handleChange}
               required
@@ -106,7 +110,15 @@ export default function ReservationSection() {
           </div>
           <div>
             <label className={labelBase}>Time</label>
-            <select name="time" value={form.time} onChange={handleChange} required className={inputBase}>
+            <select
+              name="time"
+              value={form.time}
+              onChange={handleChange}
+              required
+              onInvalid={(e) => e.target.setCustomValidity('Please select a time')}
+              onInput={(e) => e.target.setCustomValidity('')}
+              className={inputBase}
+            >
               <option value="">Select Time</option>
               <option>6:00 PM</option>
               <option>6:30 PM</option>
@@ -120,7 +132,7 @@ export default function ReservationSection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className={labelBase}>Guests</label>
             <select name="guests" value={form.guests} onChange={handleChange} className={inputBase}>

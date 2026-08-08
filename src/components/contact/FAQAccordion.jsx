@@ -16,7 +16,7 @@ export default function FAQAccordion() {
       <div>
         <div className="text-center mb-9">
           <SubHeading>FREQUENTLY ASKED</SubHeading>
-          <h3 className="font-serif text-[2rem]">Common Questions</h3>
+          <h3 className="font-serif text-[1.7rem] sm:text-[2rem]">Common Questions</h3>
         </div>
 
         <div className="max-w-[800px] mx-auto">
@@ -36,7 +36,7 @@ export default function FAQAccordion() {
                 </button>
                 <div
                   className={`overflow-hidden transition-all duration-300 ${
-                    openIndex === index ? 'max-h-[200px]' : 'max-h-0'
+                    openIndex === index ? 'max-h-[500px]' : 'max-h-0'
                   }`}
                 >
                   <div className="px-5 pb-4 text-[0.85rem] text-text-muted leading-[1.7]">

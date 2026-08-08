@@ -1,7 +1,9 @@
 import { useState, useEffect, useCallback } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { FaXmark } from 'react-icons/fa6'
 import { api } from '../../services/api'
 import { useToast } from '../../context/ToastContext'
+import { useAuth } from '../../context/AuthContext'
 import StarRating from './StarRating'
 
 export default function ReviewWidget({ target, itemId, itemName, size = 'text-[0.9rem]' }) {
@@ -51,6 +53,8 @@ export default function ReviewWidget({ target, itemId, itemName, size = 'text-[0
 }
 
 function ReviewModal({ target, itemId, itemName, onClose, onSubmitted, showToast }) {
+  const { user } = useAuth()
+  const navigate = useNavigate()
   const [rating, setRating] = useState(0)
   const [comment, setComment] = useState('')
   const [submitting, setSubmitting] = useState(false)
@@ -59,6 +63,12 @@ function ReviewModal({ target, itemId, itemName, onClose, onSubmitted, showToast
     e.preventDefault()
     if (!rating) {
       showToast('Please select a star rating before submitting.')
+      return
+    }
+    if (!user) {
+      onClose()
+      navigate('/login')
+      showToast('Please sign in to leave a review.')
       return
     }
     setSubmitting(true)
@@ -75,12 +85,12 @@ function ReviewModal({ target, itemId, itemName, onClose, onSubmitted, showToast
 
   return (
     <div
-      className="fixed inset-0 z-[2000] flex items-center justify-center p-4"
+      className="fixed inset-0 z-[2000] flex items-end sm:items-center justify-center p-0 sm:p-4"
       style={{ backgroundColor: 'rgba(0,0,0,0.6)' }}
       onClick={onClose}
     >
       <div
-        className="bg-white rounded-2xl w-full max-w-[440px] max-h-[90vh] overflow-y-auto shadow-2xl"
+        className="bg-white rounded-t-2xl sm:rounded-2xl w-full sm:max-w-[440px] max-h-[92dvh] sm:max-h-[90vh] overflow-y-auto shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between p-6 pb-0">

@@ -19,12 +19,12 @@ export default function RoomCard({ room, onBook }) {
       </div>
 
       <div className="p-6 flex-grow flex flex-col">
-        <div className="flex items-center justify-between mb-2">
-          <h3 className="font-serif text-[1.4rem]">{room.name}</h3>
+        <div className="flex items-center justify-between gap-2 mb-2 flex-wrap">
+          <h3 className="font-serif text-[1.4rem] min-w-0">{room.name}</h3>
           <ReviewWidget target="ROOM" itemId={room.id} itemName={room.name} size="text-[0.8rem]" />
         </div>
 
-        <div className="flex gap-4 text-[0.75rem] text-text-muted mb-3">
+        <div className="flex flex-wrap gap-x-4 gap-y-1 text-[0.75rem] text-text-muted mb-3">
           <span className="flex items-center gap-1">
             <FaMaximize className="text-gold" /> {room.size}
           </span>
@@ -48,7 +48,7 @@ export default function RoomCard({ room, onBook }) {
           ))}
         </div>
 
-        <div className="mt-auto pt-4 border-t border-border flex items-end justify-between">
+        <div className="mt-auto pt-4 border-t border-border flex flex-wrap items-end justify-between gap-3">
           <div>
             <span className="text-[1.25rem] font-bold text-dark-green">${room.price}</span>
             <span className="text-[0.75rem] text-light font-normal"> / night</span>

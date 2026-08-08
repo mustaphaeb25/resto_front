@@ -8,7 +8,7 @@ export default function AdminUploads() {
 
   const load = () => {
     setLoading(true)
-    api.getUploads().then(setUploads).catch(() => {}).finally(() => setLoading(false))
+    api.getUploads().then((res) => setUploads(Array.isArray(res) ? res : res.data || [])).catch(() => {}).finally(() => setLoading(false))
   }
 
   useEffect(() => { load() }, [])
@@ -39,7 +39,7 @@ export default function AdminUploads() {
 
   return (
     <div>
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
         <div>
           <h1 className="text-2xl font-serif text-dark-green">Uploads</h1>
           <p className="text-sm text-text-muted mt-1">Manage file uploads</p>
