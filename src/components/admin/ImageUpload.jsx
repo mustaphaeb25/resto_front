@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react'
-import { api } from '../../services/api'
+import { api, API_ORIGIN } from '../../services/api'
 
 export default function ImageUpload({ value, onChange, label = 'Image' }) {
   const [uploading, setUploading] = useState(false)
@@ -19,7 +19,7 @@ export default function ImageUpload({ value, onChange, label = 'Image' }) {
       const formData = new FormData()
       formData.append('image', file)
       const result = await api.uploadFile(formData)
-      onChange(`http://localhost:5000${result.url}`)
+      onChange(`${API_ORIGIN}${result.url}`)
     } catch (err) {
       alert(err.message)
     } finally {

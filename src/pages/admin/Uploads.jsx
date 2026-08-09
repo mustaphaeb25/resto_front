@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { api } from '../../services/api'
+import { api, API_ORIGIN } from '../../services/api'
 
 export default function AdminUploads() {
   const [uploads, setUploads] = useState([])
@@ -75,7 +75,7 @@ export default function AdminUploads() {
               <div key={u.id} className="bg-white rounded-xl border border-border overflow-hidden hover:shadow-sm transition-shadow">
                 <div className="aspect-square bg-card">
                   {isImage ? (
-                    <img src={`http://localhost:5000${u.url}`} alt={u.filename} className="w-full h-full object-cover" />
+                    <img src={`${API_ORIGIN}${u.url}`} alt={u.filename} className="w-full h-full object-cover" />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center">
                       <svg className="w-8 h-8 text-text-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
